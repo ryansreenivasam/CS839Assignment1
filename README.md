@@ -2,14 +2,13 @@
 
 ### Built and tested on MacOS.
 
-To build, run the following in the Assignment1 directory:
-` ` `
-cmake CMakeLists.txt
-make
-` ` `
+To build, run the following in the Assignment1 directory: </br>
 
-Then navigate to `Assignment1/scene/` and run the executable generated
+`cmake CMakeLists.txt` </br>  
+`make`
+
+Then navigate to `Assignment1/scene/` and run the executable generated. </br>
 `./scene`
 
-Open the newly generated usda file with usdview
+Open the newly generated usda file with usdview. </br>
 `usdview assignment1.usda`
