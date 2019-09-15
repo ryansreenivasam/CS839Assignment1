@@ -1,15 +1,11 @@
 
 #include "pxr/pxr.h"
-
-
 #include "pxr/usd/sdf/layer.h"
 #include "pxr/usd/sdf/path.h"
 #include "pxr/usd/usd/stage.h"
 #include "pxr/usd/usdGeom/mesh.h"
 #include "pxr/base/vt/array.h"
-
 #include "pxr/base/gf/range3f.h"
-
 #include <iostream>
 
 PXR_NAMESPACE_USING_DIRECTIVE
