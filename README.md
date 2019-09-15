@@ -1,6 +1,6 @@
 # Ryan Sreenivasam Assignment 1 for CS839
 
-### A simple animated scene.
+### Built and tested on MacOS.
 
 To build, run the following in the Assignment1 directory:
 ` ` `
