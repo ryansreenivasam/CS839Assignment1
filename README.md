@@ -8,7 +8,7 @@ To build, run the following in the Assignment1 directory: </br>
 `make`
 
 Then navigate to `Assignment1/scene/` and run the executable generated. </br>
-`./scene`
+`./assignment1`
 
 Open the newly generated usda file with usdview. </br>
 `usdview assignment1.usda`

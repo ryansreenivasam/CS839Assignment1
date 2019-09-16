@@ -1,17 +1,17 @@
-add_executable (scene
+add_executable (assignment1
         main.cpp
         )
 
 find_package(PythonLibs)
 
-target_include_directories(scene
+target_include_directories(assignment1
         PUBLIC
             ${USD_INC_DIR}
             ${PYTHON_INCLUDE_PATH}
         )
 
 target_link_libraries(
-        scene
+        assignment1
                 ${USD_LIB_DIR}/libgf.dylib
                 ${USD_LIB_DIR}/libsdf.dylib
                 ${USD_LIB_DIR}/libtf.dylib
