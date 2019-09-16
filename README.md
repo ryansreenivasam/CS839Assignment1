@@ -2,7 +2,7 @@
 
 ### Built and tested on MacOS.
 
-To build, run the following in the Assignment1 directory: </br>
+To build, run the following in the CS839Assignment1 directory: </br>
 
 `cmake CMakeLists.txt` </br>  
 `make`
