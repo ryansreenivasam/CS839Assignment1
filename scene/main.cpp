@@ -19,12 +19,12 @@ int main(int argc, char *argv[])
     UsdStageRefPtr stage = UsdStage::Open(layer);
     
     // Now we'll populate the stage with content from the objStream.
+    //Generates a cube
     std::vector<GfVec3f> objVerts;
     for(int i = 0; i <= 1; i++)
         for(int j = 0; j <= 1; j++)
             for(int k = 0; k <= 1; k++)
                 objVerts.emplace_back((float)i,(float)j,(float)k);
-    //This is inserting 8 vectors for each of the vertices that will be used
     
     std::cout << "objVerts.size() = " << objVerts.size() << std::endl;
     
@@ -77,11 +77,43 @@ int main(int argc, char *argv[])
         timeSamples.push_back((double)frame);
     for(const auto sample: timeSamples){
         pointsAttribute.Set(usdPoints, sample);
-        for(int someVerts = 4; someVerts <= 8; someVerts++) {
-            //for(auto& vertex: objVerts)
-            auto& vertex = objVerts[someVerts];
-            vertex += GfVec3f(0.03125,.0625,.125);
-        }
+        
+//        objVerts[0] += GfVec3f(-0.03125,-0.0625,-0.125);
+//        objVerts[1] += GfVec3f(-0.03125,-0.0625,0.125);
+//        objVerts[2] += GfVec3f(-0.03125,0.0625,-0.125);
+//        objVerts[3] += GfVec3f(-0.03125,0.0625,0.125);
+//        objVerts[4] += GfVec3f(0.03125,-0.0625,-0.125);
+//        objVerts[5] += GfVec3f(0.03125,-0.0625,0.125);
+//        objVerts[6] += GfVec3f(0.03125,0.0625,-0.125);
+//        objVerts[7] += GfVec3f(0.03125,0.0625,0.125);
+        
+        double theta = 0.3;
+        
+        objVerts[0] = GfVec3f(((objVerts[0].data()[0] * cos(theta)) - (objVerts[0].data()[1] * sin(theta))),
+                              ((objVerts[0].data()[0] * sin(theta)) + (objVerts[0].data()[1] * cos(theta))),
+                              objVerts[0].data()[2]);
+        objVerts[1] = GfVec3f(((objVerts[1].data()[0] * cos(theta)) - (objVerts[1].data()[1] * sin(theta))),
+                              ((objVerts[1].data()[0] * sin(theta)) + (objVerts[1].data()[1] * cos(theta))),
+                              objVerts[1].data()[2]);
+        objVerts[2] = GfVec3f(((objVerts[2].data()[0] * cos(theta)) - (objVerts[2].data()[1] * sin(theta))),
+                              ((objVerts[2].data()[0] * sin(theta)) + (objVerts[2].data()[1] * cos(theta))),
+                              objVerts[2].data()[2]);
+        objVerts[3] = GfVec3f(((objVerts[3].data()[0] * cos(theta)) - (objVerts[3].data()[1] * sin(theta))),
+                              ((objVerts[3].data()[0] * sin(theta)) + (objVerts[3].data()[1] * cos(theta))),
+                              objVerts[3].data()[2]);
+        objVerts[4] = GfVec3f(((objVerts[4].data()[0] * cos(theta)) - (objVerts[4].data()[1] * sin(theta))),
+                              ((objVerts[4].data()[0] * sin(theta)) + (objVerts[4].data()[1] * cos(theta))),
+                              objVerts[4].data()[2]);
+        objVerts[5] = GfVec3f(((objVerts[5].data()[0] * cos(theta)) - (objVerts[5].data()[1] * sin(theta))),
+                              ((objVerts[5].data()[0] * sin(theta)) + (objVerts[5].data()[1] * cos(theta))),
+                              objVerts[5].data()[2]);
+        objVerts[6] = GfVec3f(((objVerts[6].data()[0] * cos(theta)) - (objVerts[6].data()[1] * sin(theta))),
+                              ((objVerts[6].data()[0] * sin(theta)) + (objVerts[6].data()[1] * cos(theta))),
+                              objVerts[6].data()[2]);
+        objVerts[7] = GfVec3f(((objVerts[7].data()[0] * cos(theta)) - (objVerts[7].data()[1] * sin(theta))),
+                              ((objVerts[7].data()[0] * sin(theta)) + (objVerts[7].data()[1] * cos(theta))),
+                              objVerts[7].data()[2]);
+        
         usdPoints.assign(objVerts.begin(), objVerts.end());
     }
     
